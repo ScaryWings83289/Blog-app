@@ -5,15 +5,14 @@ mongoose         = require("mongoose"),
 express          = require("express"),
 app              = express();
 
+mongoose.Promise = global.Promise;
 // APP CONFIG  
-// const databaseUri = process.env.DATABASEURL || 'mongodb://localhost/restful_blog_app';
+const databaseUri = process.env.DATABASEURL || 'mongodb://localhost/restful_blog_app';
+
 // mongoose.connect("mongodb+srv://ScaryWings83289:Divya123@cluster1-fkfi7.mongodb.net/test?retryWrites=true&w=majority");
-// mongoose.connect(databaseUri, { useNewUrlParser: true ,useUnifiedTopology: true })
-//       .then(() => console.log(`Database connected`))
-//       .catch(err => console.log(`Database connection error: ${err.message}`));
-
-mongoose.connect('process.env.DATABASEURL');
-
+mongoose.connect(databaseUri, {useNewUrlParser: true, useUnifiedTopology: true})
+      .then(() => console.log(`Database connected`))
+      .catch(err => console.log(`Database connection error: ${err.message}`));
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
