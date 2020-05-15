@@ -7,12 +7,12 @@ app              = express();
 
 // APP CONFIG  
 // const databaseUri = process.env.DATABASEURL || 'mongodb://localhost/restful_blog_app';
-mongoose.connect("mongodb+srv://ScaryWings83289:Divya123@cluster1-fkfi7.mongodb.net/test?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://ScaryWings83289:Divya123@cluster1-fkfi7.mongodb.net/test?retryWrites=true&w=majority");
 // mongoose.connect(databaseUri, { useNewUrlParser: true ,useUnifiedTopology: true })
 //       .then(() => console.log(`Database connected`))
 //       .catch(err => console.log(`Database connection error: ${err.message}`));
 
-//mongoose.connect('mongodb://localhost/restful_blog_app', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('process.env.DATABASEURL');
 
 
 app.set("view engine", "ejs");
